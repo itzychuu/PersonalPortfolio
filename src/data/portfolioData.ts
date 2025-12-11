@@ -67,6 +67,14 @@ export const communities: Community[] = [
     description: 'Active Member in the college coding club. Organizing Events and So on.',
     period: '2024 - Present',
     achievements: ['Active Participation', 'Contributor']
+  },
+  {
+    id: '4',
+    name: 'IEEE',
+    role: 'Member',
+    description: 'Active Member of IEEE community in college',
+    period: '2025 - Present',
+    achievements: ['Active Participation', 'Contributor']
   }
 ];
 

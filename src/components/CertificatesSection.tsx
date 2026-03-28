@@ -1,22 +1,28 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { Award, ExternalLink, Calendar } from 'lucide-react';
 import { certificates } from '../data/portfolioData';
 
 export function CertificatesSection() {
   return (
-    <section id="certificates" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="certificates" className="py-20 relative z-10 w-full">
+      {/* Background Separator */}
+      <div className="absolute top-0 inset-x-0 h-px w-full bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Certificates & Achievements
+          <span className="text-cyan-500 font-semibold tracking-wider uppercase text-sm mb-2 block">
+            Achievements
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+            Certificates
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             Professional certifications that validate my expertise and commitment to continuous learning
           </p>
         </motion.div>
@@ -25,60 +31,65 @@ export function CertificatesSection() {
           {certificates.map((certificate, index) => (
             <motion.div
               key={certificate.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl dark:hover:shadow-gray-900/50 transition-all duration-300 border border-gray-200 dark:border-gray-700"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: index * 0.1, type: 'spring', stiffness: 100 }}
+              className="glass-card rounded-2xl overflow-hidden group border border-white/20 dark:border-white/10 hover:border-cyan-500/40 hover:shadow-[0_10px_30px_rgba(6,182,212,0.15)] transition-all duration-300 flex flex-col"
             >
               {/* Certificate Image */}
-              <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 relative overflow-hidden">
+              <div className="h-48 relative overflow-hidden bg-slate-900 flex-shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-fuchsia-500/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
                 <img
                   src={certificate.image}
                   alt={certificate.title}
-                  className="w-full h-full object-cover opacity-80"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <div className="absolute top-4 right-4">
-                  <Award className="w-8 h-8 text-yellow-400" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#0B0F19]/90 to-transparent z-20 pointer-events-none" />
+                <div className="absolute top-4 right-4 z-30">
+                  <div className="bg-white/10 backdrop-blur-md p-2 rounded-full border border-white/20 shadow-lg group-hover:shadow-[0_0_15px_rgba(250,204,21,0.5)] transition-shadow">
+                    <Award className="w-6 h-6 text-yellow-400" />
+                  </div>
                 </div>
               </div>
 
               {/* Certificate Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                  {certificate.title}
-                </h3>
-                
-                <p className="text-blue-600 dark:text-blue-400 font-semibold mb-3">
-                  {certificate.issuer}
-                </p>
-                
-                <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 mb-4">
-                  <Calendar className="w-4 h-4" />
-                  <span className="text-sm">{certificate.date}</span>
+              <div className="p-6 flex flex-col flex-grow relative z-30 -mt-8">
+                <div className="bg-slate-100/90 dark:bg-slate-800/90 backdrop-blur-md rounded-xl p-4 shadow-lg border border-white/30 dark:border-white/10 flex-grow flex flex-col justify-between group-hover:border-cyan-500/30 transition-colors">
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-tight group-hover:text-cyan-500 transition-colors">
+                      {certificate.title}
+                    </h3>
+                    
+                    <p className="text-fuchsia-600 dark:text-fuchsia-400 font-semibold mb-3 text-sm">
+                      {certificate.issuer}
+                    </p>
+                    
+                    <div className="flex items-center space-x-2 text-slate-600 dark:text-slate-400 mb-4 bg-white/50 dark:bg-[#0B0F19]/50 w-max px-3 py-1 rounded-full border border-slate-200 dark:border-white/5">
+                      <Calendar className="w-3.5 h-3.5" />
+                      <span className="text-xs font-medium">{certificate.date}</span>
+                    </div>
+
+                    {certificate.credentialId && (
+                      <p className="text-xs text-slate-500 dark:text-slate-500 mb-4 break-all">
+                        ID: <span className="font-mono">{certificate.credentialId}</span>
+                      </p>
+                    )}
+                  </div>
+
+                  {certificate.link && (
+                    <motion.a
+                      href={certificate.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ x: 5 }}
+                      className="inline-flex items-center space-x-2 text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium text-sm mt-auto"
+                    >
+                      <span>View Credential</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </motion.a>
+                  )}
                 </div>
-
-                {certificate.credentialId && (
-                  <p className="text-sm text-gray-500 dark:text-gray-500 mb-4">
-                    ID: {certificate.credentialId}
-                  </p>
-                )}
-
-                {certificate.link && (
-                  <motion.a
-                    href={certificate.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center space-x-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    <span>View Certificate</span>
-                  </motion.a>
-                )}
               </div>
             </motion.div>
           ))}

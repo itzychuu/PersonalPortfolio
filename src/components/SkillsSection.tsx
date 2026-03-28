@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { skills } from '../data/portfolioData';
 
@@ -12,64 +12,76 @@ export function SkillsSection() {
   };
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-gray-900">
+    <section id="skills" className="py-20 relative z-10 w-full">
+      {/* Optional Top Separator / Glow */}
+      <div className="absolute top-0 inset-x-0 h-px w-full bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <span className="text-cyan-500 font-semibold tracking-wider uppercase text-sm mb-2 block">
+            My Arsenal
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             Skills & Technologies
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Here are the technologies and tools I work with to bring ideas to life
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+            The core tools and frameworks I use to bring digital experiences to life.
           </p>
         </motion.div>
 
         {Object.entries(categories).map(([categoryKey, categoryName]) => {
           const categorySkills = skills.filter(skill => skill.category === categoryKey);
+          if (categorySkills.length === 0) return null;
           
           return (
             <motion.div
               key={categoryKey}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+              viewport={{ once: true, margin: "-50px" }}
+              className="mb-14"
             >
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
+              <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-fuchsia-500 mb-8 max-w-max mx-auto md:mx-0">
                 {categoryName}
               </h3>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                 {categorySkills.map((skill, index) => (
                   <motion.div
                     key={skill.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center hover:shadow-lg dark:hover:shadow-gray-900/50 transition-all duration-300 border border-gray-200 dark:border-gray-700"
+                    transition={{ delay: index * 0.05, type: 'spring', stiffness: 100 }}
+                    whileHover={{ y: -8 }}
+                    className="glass-card rounded-2xl p-6 text-center group border border-white/20 dark:border-white/10 hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.2)] transition-all duration-300 relative overflow-hidden"
                   >
-                    <div className="text-4xl mb-3">{skill.icon}</div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                    {/* Hover Glow Behind Icon */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-cyan-400/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
+                    <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300 relative z-10 flex justify-center drop-shadow-md">
+                      {skill.icon}
+                    </div>
+                    <h4 className="font-bold text-slate-800 dark:text-white mb-3 relative z-10">
                       {skill.name}
                     </h4>
                     
-                    {/* Skill Level Bar */}
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mb-2">
+                    {/* Skill Level Bar Container */}
+                    <div className="w-full bg-slate-200/50 dark:bg-[#0B0F19]/60 rounded-full h-1.5 mb-2 overflow-hidden shadow-inner backdrop-blur-sm relative z-10">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                        className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
+                        transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
+                        className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-fuchsia-500 shadow-[0_0_10px_rgba(6,182,212,0.6)]"
                       />
                     </div>
-                    <span className="text-sm text-gray-600 dark:text-gray-400">
+                    <span className="text-xs font-medium text-slate-500 dark:text-slate-400 relative z-10">
                       {skill.level}%
                     </span>
                   </motion.div>

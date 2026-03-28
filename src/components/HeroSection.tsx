@@ -1,152 +1,138 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { Download, Github, Linkedin, Mail } from 'lucide-react';
 import ProfilePic from './ProfilePic.jpg';
 
 export function HeroSection() {
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
-            <div>
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6"
-              >
-                Hi, I'm{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                Vaishnav S
-                </span>
-                ! 👋
-              </motion.h1>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="space-y-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
-              >
-                <p>
-                  Hi, I’m Vaishnav Shalikumar, a passionate learner and aspiring developer with a strong curiosity 
-                  for technology, design, and cybersecurity. I enjoy exploring different domains from front-end development
-                  with React & Tailwind to UI/UX design in Figma, and even diving deep into ethical hacking 
-                  and information security.
-                </p>
-                <p>
-                  Beyond coding, I’m actively working on strengthening my ethical hacking and cybersecurity knowledge, 
-                  aiming to become highly skilled and versatile in the field. I’m also involved in community-driven learning 
-                  platforms like MuLearn, where I participate in challenges, share ideas, and grow with like-minded people.
-                </p>
-              </motion.div>
-            </div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-wrap gap-4"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold flex items-center space-x-2 hover:shadow-lg transition-all duration-200"
-              >
-                <Download className="w-5 h-5" />
-                <span>Download Resume</span>
-              </motion.button>
-              
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all duration-200"
-              >
-                Get In Touch
-              </motion.button>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex space-x-6"
-            >
-              {[
-                { icon: Github, href: 'https://github.com/itzychuu1920', label: 'GitHub' },
-                { icon: Linkedin, href: 'www.linkedin.com/in/vaishnav-s-022a45293', label: 'LinkedIn' },
-                { icon: Mail, href: 'vaishnavshalikumar49@gmail.com', label: 'Email' },
-              ].map(({ icon: Icon, href, label }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2, y: -2 }}
-                  className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200"
-                >
-                  <Icon className="w-6 h-6" />
-                </motion.a>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center lg:justify-end"
-          >
-            <div className="relative">
-              <motion.div
-                animate={{ 
-                  rotate: [0, 5, -5, 0],
-                }}
-                transition={{ 
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="w-80 h-80 rounded-full overflow-hidden border-8 border-white dark:border-gray-700 shadow-2xl"
-              >
-                <img
-                  src={ProfilePic}
-                  alt="Vaishnav S"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-              
-              {/* Floating Elements */}
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg"
-              >
-                💻
-              </motion.div>
-              
-              <motion.div
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg"
-              >
-                🚀
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
+    <section id="about" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-20">
+      {/* Full Hero Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={ProfilePic}
+          alt="Vaishnav S Background"
+          className="w-full h-full object-cover object-[center_30%]"
+        />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-[#0f172a]/70 dark:bg-black/70 backdrop-blur-[2px] mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/40 via-transparent to-[#0f172a]/80 dark:to-black/80" />
       </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center">
+        {/* Content */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="space-y-12 max-w-4xl mx-auto flex flex-col items-center"
+        >
+          <div className="flex flex-col items-center text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="inline-flex mb-8 px-5 py-2 rounded-none border border-green-500/50 bg-black/80 backdrop-blur-md text-green-400 font-mono text-sm shadow-[0_0_15px_rgba(34,197,94,0.3)] tracking-widest uppercase"
+            >
+              $ ./initialize_system.sh 🌌
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-6xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight leading-tight drop-shadow-2xl"
+            >
+              Hi, I'm{' '}
+              <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400 animate-text-gradient bg-[length:200%_auto] pb-2 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] px-2 font-mono">
+                Vaishnav S
+              </span>
+            </motion.h1>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="space-y-6 text-xl md:text-3xl text-slate-200 leading-relaxed max-w-3xl font-light drop-shadow-lg"
+            >
+              <p>
+                I’m a passionate learner and aspiring developer with a strong curiosity
+                for technology, design, and cybersecurity. I enjoy building dynamic UIs and exploring the
+                depths of ethical hacking.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* CTA Buttons - ENLARGED AND BOLD */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-2xl mt-8"
+          >
+            <motion.a
+              href="https://drive.google.com/file/d/18xetZ5bfTEs4l4O-6HwYkka6g2oGWuVf/view?usp=drivesdk"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05, boxShadow: "0px 0px 40px rgba(34, 197, 94, 0.8)" }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto bg-green-500 hover:bg-green-400 text-black border-2 border-green-400 px-12 py-6 rounded-sm font-black text-2xl uppercase tracking-widest flex items-center justify-center space-x-4 transition-all duration-300 shadow-[0_0_20px_rgba(34,197,94,0.4)]"
+            >
+              <Download className="w-8 h-8" />
+              <span>Resume</span>
+            </motion.a>
+
+            <motion.button
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(34,197,94,0.15)", borderColor: "rgba(34,197,94,0.8)", boxShadow: "0px 0px 20px rgba(34, 197, 94, 0.4)" }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="w-full sm:w-auto px-12 py-6 rounded-sm font-black text-2xl uppercase tracking-widest text-green-400 transition-all duration-300 border-2 border-green-500/50 bg-black/50 backdrop-blur-md shadow-xl"
+            >
+              Get In Touch
+            </motion.button>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="flex items-center justify-center space-x-6 pt-10"
+          >
+            {[
+              { icon: Github, href: 'https://github.com/itzychuu', label: 'GitHub' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/vaishnav-s-022a45293/', label: 'LinkedIn' },
+              { icon: Mail, href: 'https://mail.google.com/mail/u/1/#inbox?compose=CllgCJlKnTNXmSfJZdjMFxZDTcCbPlMgXwWsMwtdNDnTdRpkHvLhcWrSnkTPQXTKqXwVWfPBBZL', label: 'Email' },
+            ].map(({ icon: Icon, href, label }) => (
+              <motion.a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.2, y: -5 }}
+                className="p-5 rounded-sm bg-black/60 hover:bg-green-500 hover:text-black hover:shadow-[0_0_30px_rgba(34,197,94,0.8)] hover:border-green-400 backdrop-blur-md border border-green-500/30 text-green-500 transition-all duration-300 shadow-xl"
+              >
+                <Icon className="w-8 h-8" />
+              </motion.a>
+            ))}
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Decorative floating shapes */}
+      <motion.div
+        animate={{ y: [-20, 20, -20], rotate: [0, 10, -10, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-20 left-[10%] w-24 h-24 bg-black/50 backdrop-blur-xl rounded-none border border-green-500/30 flex items-center justify-center text-4xl shadow-[0_0_40px_rgba(34,197,94,0.2)] hidden lg:flex font-mono text-green-500"
+      >
+        {"{}"}
+      </motion.div>
+      <motion.div
+        animate={{ y: [20, -20, 20], rotate: [0, -10, 10, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-40 right-[15%] w-20 h-20 bg-black/50 backdrop-blur-xl rounded-none border border-green-500/30 flex items-center justify-center text-3xl shadow-[0_0_40px_rgba(34,197,94,0.2)] hidden lg:flex font-mono text-green-500"
+      >
+        {"_"}
+      </motion.div>
     </section>
   );
 }

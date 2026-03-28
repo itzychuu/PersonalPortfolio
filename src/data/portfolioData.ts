@@ -85,8 +85,8 @@ export const projects: Project[] = [
     description: 'A newer version of youtube with much more interesting features. Made using react',
     image: 'https://images.indianexpress.com/2023/05/youtube-logo-featured.jpg?w=414',
     techStack: ['React', 'Node.js','Tailwind CSS'],
-    githubUrl: 'https://github.com/itzychuu1920/YoutubeCloneNew',
-    liveUrl: 'https://itzychuu1920.github.io/YoutubeCloneNew/',
+    githubUrl: 'https://github.com/itzychuu/YoutubeCloneNew',
+    liveUrl: 'https://itzychuu.github.io/YoutubeCloneNew/',
     featured: true
   },
   {
@@ -95,8 +95,8 @@ export const projects: Project[] = [
     description: 'Jusr a fun project. Basically a version of chatgpt with moodswings. Not meant to hurt anyone just for fun entertaining purpose.',
     image: 'https://pbs.twimg.com/media/GBv2caYWAAAkBV4?format=jpg&name=large',
     techStack: ['HTML', 'CSS', 'JS'],
-    githubUrl: 'https://github.com/itzychuu1920/MemeBot',
-    liveUrl: 'https://itzychuu1920.github.io/MemeBot/',
+    githubUrl: 'https://github.com/itzychuu/MemeBot',
+    liveUrl: 'https://itzychuu.github.io/MemeBot/',
     featured: true
   },
   {

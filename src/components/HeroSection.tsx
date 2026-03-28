@@ -1,45 +1,43 @@
 
 import { motion } from 'framer-motion';
 import { Download, Github, Linkedin, Mail } from 'lucide-react';
-import ProfilePic from './ProfilePic.jpg';
+import Spline from '@splinetool/react-spline';
 
 export function HeroSection() {
   return (
     <section id="about" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-20">
-      {/* Full Hero Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={ProfilePic}
-          alt="Vaishnav S Background"
-          className="w-full h-full object-cover object-[center_30%]"
-        />
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-[#0f172a]/70 dark:bg-black/70 backdrop-blur-[2px] mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/40 via-transparent to-[#0f172a]/80 dark:to-black/80" />
+      {/* Full Hero 3D Spline Background */}
+      <div className="absolute inset-0 z-0 bg-black">
+        <div className="absolute inset-0 w-full h-full">
+          <Spline scene="https://prod.spline.design/sklS7N38rUwkHq7Y/scene.splinecode" />
+        </div>
+        
+        {/* Subtle Dark overlays for readability - pointer-events-none allows interacting with Spline underneath */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/90 pointer-events-none" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center">
         {/* Content */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="space-y-12 max-w-4xl mx-auto flex flex-col items-center"
         >
           <div className="flex flex-col items-center text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
               className="inline-flex mb-8 px-5 py-2 rounded-none border border-green-500/50 bg-black/80 backdrop-blur-md text-green-400 font-mono text-sm shadow-[0_0_15px_rgba(34,197,94,0.3)] tracking-widest uppercase"
             >
               $ ./initialize_system.sh 🌌
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.4 }}
               className="text-6xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight leading-tight drop-shadow-2xl"
             >
               Hi, I'm{' '}
@@ -49,9 +47,9 @@ export function HeroSection() {
             </motion.h1>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.6 }}
               className="space-y-6 text-xl md:text-3xl text-slate-200 leading-relaxed max-w-3xl font-light drop-shadow-lg"
             >
               <p>
@@ -64,9 +62,9 @@ export function HeroSection() {
 
           {/* CTA Buttons - ENLARGED AND BOLD */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-2xl mt-8"
           >
             <motion.a
@@ -93,9 +91,9 @@ export function HeroSection() {
 
           {/* Social Links */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.0 }}
             className="flex items-center justify-center space-x-6 pt-10"
           >
             {[

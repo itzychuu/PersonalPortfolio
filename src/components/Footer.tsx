@@ -25,7 +25,7 @@ export function Footer() {
               <span className="text-white font-bold text-2xl tracking-wider">VS</span>
             </div>
             <h3 className="text-2xl font-bold mb-2 text-slate-900 dark:text-white">Vaishnav S</h3>
-            <p className="text-cyan-600 dark:text-cyan-400 font-medium tracking-wide">Enthusiastic Developer</p>
+            <p className="text-cyan-600 dark:text-cyan-400 font-medium tracking-wide">Enthusiastic Happy Developer</p>
           </motion.div>
 
           <motion.div

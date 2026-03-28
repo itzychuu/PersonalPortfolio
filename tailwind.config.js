@@ -14,8 +14,8 @@ export default {
         blue: colors.teal,
       },
       fontFamily: {
-        sans: ['"Courier New"', 'Courier', 'monospace'],
-        mono: ['"Courier New"', 'Courier', 'monospace'],
+        sans: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       }
     },
   },

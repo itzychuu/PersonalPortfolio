@@ -8,7 +8,8 @@ export function SkillsSection() {
     backend: 'Backend',
     tools: 'Tools & DevOps',
     design: 'Design',
-    others: 'Others'
+    network: 'Networking',
+    programming: 'Programming Languages'
   };
 
   return (

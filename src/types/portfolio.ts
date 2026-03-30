@@ -2,7 +2,7 @@ export interface Skill {
   name: string;
   icon: string;
   level: number;
-  category: 'frontend' | 'backend' | 'tools' | 'design' | 'others';
+  category: 'frontend' | 'backend' | 'tools' | 'design' | 'network' | 'programming';
 }
 
 export interface Certificate {

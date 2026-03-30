@@ -12,8 +12,10 @@ export const skills: Skill[] = [
   { name: 'Git', icon: '📚', level: 85, category: 'tools' },
   { name: 'GitHub', icon: '🐳', level: 70, category: 'tools' },
   { name: 'Figma', icon: '🎯', level: 75, category: 'design' },
-  { name: 'Cyber Security', icon: '🛡️', level: 60, category: 'others' },
-  { name: 'Networking', icon: '🌐', level: 60, category: 'others' }
+  { name: 'Cyber Security', icon: '🛡️', level: 60, category: 'network' },
+  { name: 'Networking', icon: '🌐', level: 60, category: 'network' },
+  { name: 'C/C++', icon: 'C++', level: 75, category: 'programming' },
+  { name: 'Java', icon: '♨️', level: 75, category: 'programming' }
 ];
 
 export const certificates: Certificate[] = [
@@ -47,7 +49,7 @@ export const communities: Community[] = [
   {
     id: '1',
     name: 'Mulearn',
-    role: 'Active Contributor',
+    role: 'Creative Team',
     description: 'Contributing to Mulearn community and helping newcomers in the community.',
     period: '2025 - Present',
     achievements: ['50+ GitHub contributions', 'Active Participation']
@@ -56,7 +58,7 @@ export const communities: Community[] = [
     id: '2',
     name: 'TinkerHub',
     role: 'Member',
-    description: 'Actively Cotributing to TinkerHub Community by taking part in their projects and other works.',
+    description: 'Actively Contributing to TinkerHub Community by taking part in their projects and other works.',
     period: '2025 - Present',
     achievements: ['Active Participation', 'Contributor']
   },
@@ -71,7 +73,7 @@ export const communities: Community[] = [
   {
     id: '4',
     name: 'IEEE',
-    role: 'Member',
+    role: 'Secretary IEEE IAS SB SBCE',
     description: 'Active Member of IEEE community in college',
     period: '2025 - Present',
     achievements: ['Active Participation', 'Contributor']

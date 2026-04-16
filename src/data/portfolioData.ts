@@ -83,16 +83,36 @@ export const communities: Community[] = [
 export const projects: Project[] = [
   {
     id: '1',
-    title: 'Youtube Clone',
-    description: 'A newer version of youtube with much more interesting features. Made using react',
-    image: 'https://images.indianexpress.com/2023/05/youtube-logo-featured.jpg?w=414',
-    techStack: ['React', 'Node.js','Tailwind CSS'],
-    githubUrl: 'https://github.com/itzychuu/YoutubeCloneNew',
-    liveUrl: 'https://itzychuu.github.io/YoutubeCloneNew/',
+    title: 'OmniMind V2',
+    description: 'OmniMind is an intelligent, all-in-one AI platform designed to streamline tasks, generate insights, and enhance productivity through smart automation and user-centric features. It brings multiple AI capabilities together into a seamless experience for efficient problem-solving and decision-making.',
+    image: 'https://i.ibb.co/W4Lx474R/Screenshot-2026-04-16-201531.png',
+    techStack: ['Figma', 'React', 'Tailwind CSS', 'Ollama'],
+    githubUrl: 'https://github.com/itzychuu/OmniMindv2',
+    liveUrl: 'https://github.com/itzychuu/OmniMindv2',
     featured: true
   },
   {
     id: '2',
+    title: 'DocuSmith',
+    description: 'DocuSmith is an AI-powered report generation platform that simplifies creating structured, professional documents with minimal effort. It automates content generation, formatting, and organization to save time and boost productivity.',
+    image: 'https://i.ibb.co/FP8Yq5V/Screenshot-2026-04-15-125102.png',
+    techStack: ['Figma', 'React', 'CSS', 'Render', 'vercel', 'OpenRouter API', 'Firebase'],
+    githubUrl: 'https://github.com/itzychuu/DocuSmithV2---AI-Based-Report-Generator',
+    liveUrl: 'https://docusmithv2.vercel.app/',
+    featured: true
+  },
+  {
+    id: '3',
+    title: 'CareGuru',
+    description: 'CareGuru is a smart healthcare appointment booking app that allows users to easily find doctors, schedule consultations, and manage appointments in one place. It streamlines the booking process while improving accessibility to healthcare services.',
+    image: 'https://i.ibb.co/SpTxKZQ/Screenshot-2026-04-03-105720.png',
+    techStack: ['Figma', 'React', 'Firebase', 'Vercel'],
+    githubUrl: 'https://github.com/itzychuu/CareGuru_v2_Updated',
+    liveUrl: 'https://careguruv2-updated.vercel.app/',
+    featured: true
+  },
+  {
+    id: '4',
     title: 'MemeBot',
     description: 'Jusr a fun project. Basically a version of chatgpt with moodswings. Not meant to hurt anyone just for fun entertaining purpose.',
     image: 'https://pbs.twimg.com/media/GBv2caYWAAAkBV4?format=jpg&name=large',
@@ -102,7 +122,18 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    id: '3',
+    id: '5',
+    title: 'Youtube Clone',
+    description: 'A newer version of youtube with much more interesting features. Made using react',
+    image: 'https://images.indianexpress.com/2023/05/youtube-logo-featured.jpg?w=414',
+    techStack: ['React', 'Node.js','Tailwind CSS'],
+    githubUrl: 'https://github.com/itzychuu/YoutubeCloneNew',
+    liveUrl: 'https://itzychuu.github.io/YoutubeCloneNew/',
+    featured: true
+  },
+  
+  {
+    id: '6',
     title: 'Youtube UI Clone Design',
     description: 'A youtube UI clone made using FIGMA',
     image: 'https://static1.howtogeekimages.com/wordpress/wp-content/uploads/2021/06/youtube_hero_1200x675.jpg',
@@ -112,11 +143,11 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    id: '4',
+    id: '7',
     title: 'GPay UI Design',
     description: 'A modern UI design for GPAY.',
     image: 'https://telecomtalk.info/wp-content/uploads/2022/12/gpay-how-to-create-or-find-upi.jpg',
-    techStack: ['Next.js', 'MDX', 'Prisma', 'Vercel'],
+    techStack: ['Figma'],
     githubUrl: 'https://www.figma.com/design/2C1CxNgSIgK8OLWNSabYin/GpayV2?node-id=0-1&m=dev&t=pjN37KgVs3AilAYI-1',
     liveUrl: 'https://www.figma.com/proto/2C1CxNgSIgK8OLWNSabYin/GpayV2?node-id=0-1&t=pjN37KgVs3AilAYI-1',
     featured: true

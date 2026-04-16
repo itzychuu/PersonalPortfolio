@@ -61,7 +61,7 @@ export function HeroSection() {
             className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 w-full pt-4"
           >
             <motion.a
-              href="https://drive.google.com/file/d/18xetZ5bfTEs4l4O-6HwYkka6g2oGWuVf/view?usp=drivesdk"
+              href="https://drive.google.com/file/d/1mqqDo4zf27qKsxndp6-QZOXxC1HcQDAS/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, boxShadow: "0px 0px 40px rgba(34, 197, 94, 0.8)" }}

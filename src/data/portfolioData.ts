@@ -48,7 +48,7 @@ export const certificates: Certificate[] = [
 export const communities: Community[] = [
   {
     id: '1',
-    name: 'Mulearn',
+    name: 'Mulearn SBCE',
     role: 'Creative Team',
     description: 'Contributing to Mulearn community and helping newcomers in the community.',
     period: '2025 - Present',
@@ -56,7 +56,7 @@ export const communities: Community[] = [
   },
   {
     id: '2',
-    name: 'TinkerHub',
+    name: 'TinkerHub SBCE',
     role: 'Member',
     description: 'Actively Contributing to TinkerHub Community by taking part in their projects and other works.',
     period: '2025 - Present',
@@ -64,7 +64,7 @@ export const communities: Community[] = [
   },
   {
     id: '3',
-    name: 'Coding Club',
+    name: 'Coding Club SBCE Dept. of CSE',
     role: 'Member',
     description: 'Active Member in the college coding club. Organizing Events and So on.',
     period: '2024 - Present',

@@ -66,7 +66,15 @@ export function SkillsSection() {
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-cyan-400/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
                     <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300 relative z-10 flex justify-center drop-shadow-md">
-                      {skill.icon}
+                      {skill.iconImage ? (
+                        <img
+                          src={skill.iconImage}
+                          alt={skill.name}
+                          className="w-12 h-12 object-contain"
+                        />
+                      ) : (
+                        skill.icon
+                      )}
                     </div>
                     <h4 className="font-bold text-slate-800 dark:text-white mb-3 relative z-10">
                       {skill.name}

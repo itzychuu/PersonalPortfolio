@@ -1,6 +1,7 @@
 export interface Skill {
   name: string;
-  icon: string;
+  icon: string;          // emoji or short text fallback
+  iconImage?: string;    // optional image URL — overrides icon when provided
   level: number;
   category: 'frontend' | 'backend' | 'tools' | 'design' | 'network' | 'programming';
 }

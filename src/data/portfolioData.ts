@@ -1,21 +1,21 @@
 import { Skill, Certificate, Community, Project } from '../types/portfolio';
 
 export const skills: Skill[] = [
-  { name: 'React', icon: '⚛️', level: 90, category: 'frontend' },
-  { name: 'TypeScript', icon: '📘', level: 60, category: 'frontend' },
-  { name: 'JavaScript', icon: '🟨', level: 70, category: 'frontend' },
-  { name: 'HTML', icon: '</>', level: 90, category: 'frontend' },
-  { name: 'CSS', icon: '#', level: 90, category: 'frontend' },
-  { name: 'Node.js', icon: '🟢', level: 80, category: 'backend' },
-  { name: 'Python', icon: '🐍', level: 75, category: 'backend' },
-  { name: 'Tailwind CSS', icon: '🎨', level: 90, category: 'frontend' },
-  { name: 'Git', icon: '📚', level: 85, category: 'tools' },
-  { name: 'GitHub', icon: '🐳', level: 70, category: 'tools' },
-  { name: 'Figma', icon: '🎯', level: 75, category: 'design' },
+  { name: 'React', icon: '⚛️', iconImage: 'https://i.ibb.co/YSwyZZK/react-removebg-preview.png', level: 90, category: 'frontend' },
+  { name: 'TypeScript', icon: '📘', iconImage:'https://i.ibb.co/BVS9N6MG/typescript.png', level: 60, category: 'frontend' },
+  { name: 'JavaScript', icon: '🟨', iconImage:'https://i.ibb.co/CKNLs7Cz/Javascript-Logo.png', level: 70, category: 'frontend' },
+  { name: 'HTML', icon: '</>', iconImage:'https://i.ibb.co/QFM4g6fK/html-removebg-preview.png', level: 90, category: 'frontend' },
+  { name: 'CSS', icon: '#', iconImage:'https://i.ibb.co/RpmDxH7f/css-removebg-preview.png', level: 90, category: 'frontend' },
+  { name: 'Node.js', icon: '🟢', iconImage:'https://i.ibb.co/k61hzb9r/node-removebg-preview.png',  level: 80, category: 'backend' },
+  { name: 'Python', icon: '🐍',iconImage: 'https://i.ibb.co/fzPvT0Kt/python-removebg-preview.png', level: 75, category: 'backend' },
+  { name: 'Tailwind CSS', icon: '🎨', iconImage:'https://i.ibb.co/HpM1FvdP/tailwind-removebg-preview.png', level: 90, category: 'frontend' },
+  { name: 'Git', icon: '📚', iconImage:'https://i.ibb.co/1GZ7m6Ry/git-removebg-preview.png', level: 85, category: 'tools' },
+  { name: 'GitHub', icon: '🐳', iconImage:'https://i.ibb.co/qYZ6MQ39/download-removebg-preview.png', level: 70, category: 'tools' },
+  { name: 'Figma', icon: '🎯', iconImage:'https://i.ibb.co/twKG8CsV/figma-removebg-preview.png', level: 75, category: 'design' },
   { name: 'Cyber Security', icon: '🛡️', level: 60, category: 'network' },
   { name: 'Networking', icon: '🌐', level: 60, category: 'network' },
-  { name: 'C/C++', icon: 'C++', level: 75, category: 'programming' },
-  { name: 'Java', icon: '♨️', level: 75, category: 'programming' }
+  { name: 'C/C++', icon: 'C++', iconImage:'https://i.ibb.co/1tHF23QH/clanguage-removebg-preview.png', level: 75, category: 'programming' },
+  { name: 'Java', icon: '♨️', iconImage:'https://i.ibb.co/s9GFpRDB/java-removebg-preview.png',  level: 75, category: 'programming' }
 ];
 
 export const certificates: Certificate[] = [
@@ -48,14 +48,22 @@ export const certificates: Certificate[] = [
 export const communities: Community[] = [
   {
     id: '1',
-    name: 'Mulearn SBCE',
+    name: 'IEEE',
+    role: 'Secretary IEEE IAS SB SBCE',
+    description: 'Active Member of IEEE community in college',
+    period: '2025 - Present',
+    achievements: ['Active Participation', 'Contributor']
+  },
+  {
+    id: '2',
+    name: 'Mulearn SBC',
     role: 'Creative Team',
     description: 'Contributing to Mulearn community and helping newcomers in the community.',
     period: '2025 - Present',
     achievements: ['50+ GitHub contributions', 'Active Participation']
   },
   {
-    id: '2',
+    id: '3',
     name: 'TinkerHub SBCE',
     role: 'Member',
     description: 'Actively Contributing to TinkerHub Community by taking part in their projects and other works.',
@@ -63,19 +71,11 @@ export const communities: Community[] = [
     achievements: ['Active Participation', 'Contributor']
   },
   {
-    id: '3',
+    id: '4',
     name: 'Coding Club SBCE Dept. of CSE',
     role: 'Member',
     description: 'Active Member in the college coding club. Organizing Events and So on.',
     period: '2024 - Present',
-    achievements: ['Active Participation', 'Contributor']
-  },
-  {
-    id: '4',
-    name: 'IEEE',
-    role: 'Secretary IEEE IAS SB SBCE',
-    description: 'Active Member of IEEE community in college',
-    period: '2025 - Present',
     achievements: ['Active Participation', 'Contributor']
   }
 ];
